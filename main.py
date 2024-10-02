@@ -11,6 +11,7 @@ from media_platform.kuaishou import KuaishouCrawler
 from media_platform.tieba import TieBaCrawler
 from media_platform.weibo import WeiboCrawler
 from media_platform.xhs import XiaoHongShuCrawler
+from media_platform.zhihu import ZhihuCrawler
 
 
 class CrawlerFactory:
@@ -20,7 +21,8 @@ class CrawlerFactory:
         "ks": KuaishouCrawler,
         "bili": BilibiliCrawler,
         "wb": WeiboCrawler,
-        "tieba": TieBaCrawler
+        "tieba": TieBaCrawler,
+        "zhihu": ZhihuCrawler
     }
 
     @staticmethod
@@ -45,6 +47,7 @@ async def main():
     if config.SAVE_DATA_OPTION == "db":
         await db.close()
 
+    
 
 if __name__ == '__main__':
     try:
