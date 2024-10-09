@@ -1,18 +1,14 @@
 # 基础配置
 PLATFORM = "xhs"
-<<<<<<< HEAD
 #KEYWORDS = "python,golang"
-KEYWORDS = "虚拟男友"
-=======
-KEYWORDS = "编程副业,编程兼职"
->>>>>>> 90460749098d8075551a12e7ac5640730b43f388
+KEYWORDS = "筑梦岛"
 LOGIN_TYPE = "qrcode"  # qrcode or phone or cookie
 COOKIES = ""
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持小红书
 SORT_TYPE = "general"
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持抖音
 PUBLISH_TIME_TYPE = 0
-CRAWLER_TYPE = "detail"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
+CRAWLER_TYPE = "search"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
 
 # 是否开启 IP 代理
 ENABLE_IP_PROXY = False
@@ -31,13 +27,8 @@ HEADLESS = False
 # 是否保存登录状态
 SAVE_LOGIN_STATE = False
 
-<<<<<<< HEAD
 # 数据保存类型选项配置,支持三种类型：csv、db、json
 SAVE_DATA_OPTION = "csv"  # csv or db or json
-=======
-# 数据保存类型选项配置,支持三种类型：csv、db、json, 最好保存到DB，有排重的功能。
-SAVE_DATA_OPTION = "json"  # csv or db or json
->>>>>>> 90460749098d8075551a12e7ac5640730b43f388
 
 # 用户浏览器缓存的浏览器文件配置
 USER_DATA_DIR = "%s_user_data_dir"  # %s will be replaced by platform name
@@ -45,12 +36,9 @@ USER_DATA_DIR = "%s_user_data_dir"  # %s will be replaced by platform name
 # 爬取开始页数 默认从第一页开始
 START_PAGE = 1
 
+
 # 爬取视频/帖子的数量控制
-<<<<<<< HEAD
 CRAWLER_MAX_NOTES_COUNT = 300
-=======
-CRAWLER_MAX_NOTES_COUNT = 100
->>>>>>> 90460749098d8075551a12e7ac5640730b43f388
 
 # 并发爬虫数量控制
 MAX_CONCURRENCY_NUM = 1
@@ -59,25 +47,35 @@ MAX_CONCURRENCY_NUM = 1
 ENABLE_GET_IMAGES = False
 
 # 是否开启爬评论模式, 默认不开启爬评论
-ENABLE_GET_COMMENTS = True
+ENABLE_GET_COMMENTS = False
 
 # 是否开启爬二级评论模式, 默认不开启爬二级评论
 # 老版本项目使用了 db, 则需参考 schema/tables.sql line 287 增加表字段
-ENABLE_GET_SUB_COMMENTS = True
+ENABLE_GET_SUB_COMMENTS = False
 
 # 指定小红书需要爬虫的笔记ID列表
-XHS_SPECIFIED_ID_LIST = [
-<<<<<<< HEAD
-    "661b7af8000000001a01170f"
-    #"660b3ac5000000001a0110a8"#35.5w
-    # "6422c2750000000027000d88",
-    # "64ca1b73000000000b028dd2",
-    # "630d5b85000000001203ab41",
-=======
-    "6422c2750000000027000d88",
->>>>>>> 90460749098d8075551a12e7ac5640730b43f388
-    # ........................
-]
+#从本地文件中获取id列表
+import os
+# 获取当前文件的绝对路径
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# 构建指向目标文件的路径
+file_path = os.path.join(current_dir, '..', 'AIDating', 'List', 'AIGirlfriend_note_ids_list.txt')
+
+# 初始化一个空列表
+XHS_SPECIFIED_ID_LIST = []
+
+# 打开文件并读取内容
+with open(file_path, 'r', encoding='utf-8') as file:
+    XHS_SPECIFIED_ID_LIST = [line.strip() for line in file.readlines()]
+
+# XHS_SPECIFIED_ID_LIST = [
+#     "661b7af8000000001a01170f"
+#     #"660b3ac5000000001a0110a8"#35.5w
+#     # "6422c2750000000027000d88",
+#     # "64ca1b73000000000b028dd2",
+#     # "630d5b85000000001203ab41",
+#     # ........................
+# ]
 
 # 指定抖音需要爬取的ID列表
 DY_SPECIFIED_ID_LIST = [
