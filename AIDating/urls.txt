@@ -1,0 +1,39 @@
+https://www.xiaohongshu.com/explore/66ae6f9b000000000600f9ab?xsec_token=ABHIwPjrnJUIPU_BhFFIuZFbpXpxvmboKVJJ8bZfH4a34=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/664c63380000000015010660?xsec_token=ABZqTusNpEW08Gz5eSLRz0nfPaH_SUq7XTBreYaqAvNTg=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/66ae6f9b000000000600f9ab?xsec_token=ABHIwPjrnJUIPU_BhFFIuZFbpXpxvmboKVJJ8bZfH4a34=&xsec_source=pc_search&source=web_search_result_notes
+import pyperclip
+import time
+
+# 存储已记录的 URL
+recorded_urls = set()
+
+print("请在浏览器中复制 URL，程序会自动记录。按 Ctrl+C 停止。")
+
+try:
+    while True:
+        # 获取剪贴板内容
+        url = pyperclip.paste().strip()
+        
+        # 检查是否是新的 URL
+        if url and url not in recorded_urls:
+            recorded_urls.add(url)  # 记录 URL
+            with open("urls.txt", "a") as file:
+                file.write(url + "\n")
+            print(f"已记录 URL: {url}")
+        
+        time.sleep(1)  # 每秒检查一次剪贴板
+except KeyboardInterrupt:
+    print("\n程序已停止。")
+https://www.xiaohongshu.com/explore/66ae6f9b000000000600f9ab?xsec_token=ABHIwPjrnJUIPU_BhFFIuZFbpXpxvmboKVJJ8bZfH4a34=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/664c63380000000015010660?xsec_token=ABZqTusNpEW08Gz5eSLRz0nfPaH_SUq7XTBreYaqAvNTg=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/670792c9000000001902e503?xsec_token=ABn6etXWZ3wWEwg3vxDzuuwR9K9WZWqbv_5xVe0HNVLQ0=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/665b3a320000000005007243?xsec_token=ABkRaOIjLQxHlpg8xVGXxCR8P4cw7yYzrGPjA1QFyBlQ0=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/66a8f9c10000000027010ff7?xsec_token=ABsZ-j1uVwne8G2EyYW2NPSunUfNHPMDeVIv-9IWKJROA=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/6685e580000000001e0139a1?xsec_token=ABtevQ5zzFkdclLjDKgQFUJ3UQpE4PzZytRD_EIOn_eJk=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/666d58730000000006004c17?xsec_token=ABUM2bDklwvlwQZCJJu4f0uQW3nkPO3LiiNX0TAc1KTAY=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/665dad170000000005004cff?xsec_token=ABm5NDTPW6a8KOGAGWUsyzkzXyQFkgPGmjyhSOJSJaRo0=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/66434d8c000000001e01a2d7?xsec_token=AB_na74VtTPP58OyuhcglR3oh24b7vciNJfW5Kjjur9YU=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/67079a29000000001a022218?xsec_token=ABn6etXWZ3wWEwg3vxDzuuwe4AIZkaVgUsMoBXCs_MWZc=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/664e5cba00000000150081ec?xsec_token=AB5sn3JDdkUpO4uCjh9nw6VsgcZi9jqZxMc0kpCzWVznM=&xsec_source=pc_search&source=web_search_result_notes
+https://www.xiaohongshu.com/explore/67069c5d000000002c02a0ba?xsec_token=ABn1G4HJktA-3RdaaoH0sAupSmmN240qA8ijfaXCN9gMI=&xsec_source=pc_search&source=web_search_result_notes
+except KeyboardInterrupt:
