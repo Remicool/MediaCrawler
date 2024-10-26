@@ -8,7 +8,7 @@ COOKIES = ""
 SORT_TYPE = "general"
 # 具体值参见media_platform.xxx.field下的枚举值，暂时只支持抖音
 PUBLISH_TIME_TYPE = 0
-CRAWLER_TYPE = "search"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
+CRAWLER_TYPE = "detail"  # 爬取类型，search(关键词搜索) | detail(帖子详情)| creator(创作者主页数据)
 
 # 是否开启 IP 代理
 ENABLE_IP_PROXY = False
@@ -47,11 +47,11 @@ MAX_CONCURRENCY_NUM = 1
 ENABLE_GET_IMAGES = False
 
 # 是否开启爬评论模式, 默认不开启爬评论
-ENABLE_GET_COMMENTS = False
+ENABLE_GET_COMMENTS = True
 
 # 是否开启爬二级评论模式, 默认不开启爬二级评论
 # 老版本项目使用了 db, 则需参考 schema/tables.sql line 287 增加表字段
-ENABLE_GET_SUB_COMMENTS = False
+ENABLE_GET_SUB_COMMENTS = True
 
 # 指定小红书需要爬虫的笔记ID列表
 #从本地文件中获取id列表
@@ -65,17 +65,34 @@ file_path = os.path.join(current_dir, '..', 'AIDating', 'List', 'AIGirlfriend_no
 XHS_SPECIFIED_ID_LIST = []
 
 # 打开文件并读取内容
-with open(file_path, 'r', encoding='utf-8') as file:
-    XHS_SPECIFIED_ID_LIST = [line.strip() for line in file.readlines()]
+# with open(file_path, 'r', encoding='utf-8') as file:
+#     XHS_SPECIFIED_ID_LIST = [line.strip() for line in file.readlines()]
 
-# XHS_SPECIFIED_ID_LIST = [
-#     "661b7af8000000001a01170f"
-#     #"660b3ac5000000001a0110a8"#35.5w
-#     # "6422c2750000000027000d88",
-#     # "64ca1b73000000000b028dd2",
-#     # "630d5b85000000001203ab41",
-#     # ........................
-# ]
+XHS_SPECIFIED_ID_LIST = [
+    "660b3ac5000000001a0110a8",
+    "663ab047000000001e031118",#35.5w
+    "6636eaa8000000001e03277f",
+    "665a710b000000001401b3d8",
+    "660baa47000000001a011667",
+    "66237eeb0000000001030a77",
+    "661bb299000000001a017022",#35.5w
+    "66d99b000000000012010ac0",
+    "661e1738000000000d0304c4",
+    "6644b122000000001e0339b8",
+    "660bcfdf000000001a0150e4",
+    "6633a4c5000000001e02efcd",
+    "663937a8000000001e035c29",
+    "6615f66b000000001b00c031",
+    "66141d6b000000001a01121e",
+    "668eb422000000000302668f",
+    "661225c6000000001a015022",
+    "660eba95000000001a00f02b",
+    "660e4301000000001a00ef8d",
+    "670c081700000000210062e2",
+    "6653481e0000000016010c62",
+    "6638d583000000001e03088f",
+    "661a5e45000000001a0131a0"
+]
 
 # 指定抖音需要爬取的ID列表
 DY_SPECIFIED_ID_LIST = [
